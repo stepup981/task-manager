@@ -27,8 +27,8 @@ export default {
     },
     filter: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 };
 </script>
@@ -44,10 +44,10 @@ export default {
       removeall: removeall,
       save: save,
       info: info,
-      filter: filter
+      filter: filter,
     }"
   >
-  <slot></slot>
+    <slot></slot>
   </button>
 </template>
 
@@ -123,9 +123,9 @@ export default {
 
   .removeall {
     width: 100%;
-  &::before {
-    content: url("@/assets/delete.svg");
+    &::before {
+      content: url("@/assets/delete.svg");
+    }
   }
-}
 }
 </style>

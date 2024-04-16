@@ -1,20 +1,18 @@
 <script>
-import { useTaskStore } from '@/store';
-
+import { useTaskStore } from "@/store";
 
 export default {
-  props: ['task'],
-
+  props: ["task"],
 
   setup(props) {
-    const taskStore = useTaskStore()
-    const task = taskStore.task
+    const taskStore = useTaskStore();
+    const task = taskStore.task;
 
     // в объекте task лежит вся информация о той таске, которую выбрали
-    
+
     return {
-      task
-    }
+      task,
+    };
   },
 };
 </script>

@@ -12,15 +12,6 @@ export default {
     const taskStore = useTaskStore();
     let tasks = ref(taskStore.tasks);
 
-    const editTask = (task) => {
-      taskStore.editTask(task)
-    };
-
-    const saveTask = (task) => {
-      taskStore.saveTask(task)
-      
-    };
-
     const toggleTaskCompleted = (task) => {
       task.completed = !task.completed;
     };
@@ -29,11 +20,9 @@ export default {
       tasks.value = taskStore.filteredTasks;
     };
 
-    const uploadTask = (task) => {
-      taskStore.uploadTask(task)
-    }
-
     onMounted(() => {
+      tasks.value.splice(0, tasks.value.length);
+
       const savedTasks = JSON.parse(localStorage.getItem("tasks"));
       if (savedTasks) {
         savedTasks.forEach((task) => {
@@ -42,17 +31,15 @@ export default {
       }
     });
 
-   
-
     return {
       tasks,
-      editTask,
-      saveTask,
+      editTask: taskStore.editTask,
+      saveTask: taskStore.saveTask,
       deleteTask: taskStore.deleteTask,
       removeAll: taskStore.removeAll,
       toggleTaskCompleted,
       filteredTasks,
-      uploadTask
+      uploadTask: taskStore.uploadTask,
     };
   },
 };

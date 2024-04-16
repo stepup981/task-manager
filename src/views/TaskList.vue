@@ -1,7 +1,4 @@
 <script>
-import { onMounted } from "vue";
-import { useTaskStore } from "@/store";
-
 import AddTaskField from "@/components/AddTaskField.vue";
 import FilterTask from "@/components/FilterTaskField.vue";
 import EditTaskField from "@/components/EditTaskField.vue";
@@ -10,7 +7,7 @@ export default {
   components: {
     AddTaskField,
     EditTaskField,
-    FilterTask
+    FilterTask,
   },
 };
 </script>
@@ -21,7 +18,7 @@ export default {
     <div class="task-manager__arrow-down"></div>
     <div class="task-manager__block">
       <AddTaskField />
-      <FilterTask  />
+      <FilterTask />
       <EditTaskField />
     </div>
   </div>
