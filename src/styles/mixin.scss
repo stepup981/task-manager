@@ -1,0 +1,26 @@
+@mixin task {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 6px;
+  min-width: 60%;
+  max-width: 60%;
+  word-wrap: break-word;
+  font-size: 14px;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    background-color: var(--primary-color-orange);
+  }
+
+  &::placeholder {
+    font-size: 12px;
+  }
+
+  @media (max-width: 880px) {
+    min-width: none;
+    max-width: none;
+  }
+
+  
+}
